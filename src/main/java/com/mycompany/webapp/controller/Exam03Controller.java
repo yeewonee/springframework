@@ -28,9 +28,8 @@ public class Exam03Controller {
 	
 	@GetMapping("/method1")
 	   public String method1(
-			   				@RequestParam(name="kind") String type,  //값이 넘어오지 않을 경우 default값이 1
-			   				@RequestParam(defaultValue="1") int pageNo,
-			   				Model model) {
+			@RequestParam(name="kind") String type,  //값이 넘어오지 않을 경우 default값이 1
+			@RequestParam(defaultValue="1") int pageNo,Model model) {
 	      model.addAttribute("kind", type);
 	      model.addAttribute("pageNo", pageNo);
 	      return "exam03/method1";
